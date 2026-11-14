@@ -94,7 +94,7 @@ function Hero() {
                   <img
                     src={profileData.avatarUrl}
                     alt={`${profileData.name} profile photo`}
-                    className="w-full h-full rounded-full object-cover object-top"
+                    className="w-full h-full rounded-full object-cover"
                   />
                 </div>
               </div>
