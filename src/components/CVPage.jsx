@@ -38,7 +38,7 @@ function CVPage() {
             <img
               src={profileData.avatarUrl}
               alt={profileData.name}
-              className="w-24 h-24 rounded-full border-4 border-white/40 object-cover flex-shrink-0"
+              className="w-24 h-24 rounded-full border-4 border-white/40 object-cover object-top flex-shrink-0"
             />
             <div className="text-center sm:text-left">
               <h1 className="text-3xl font-extrabold">{profileData.name}</h1>
