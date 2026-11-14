@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Variables for smooth theme transitions ─── */
+:root {
+  --transition-speed: 0.3s;
+}
+
+/* ─── Base resets ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  transition: background-color var(--transition-speed) ease,
+              color var(--transition-speed) ease;
+  @apply bg-light-bg text-slate-800;
+}
+
+.dark body,
+.dark {
+  @apply bg-dark-bg text-slate-100;
+}
+
+/* ─── Scrollbar styling ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-100 dark:bg-slate-800;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-full;
+}
+
+/* ─── Section spacing utility ─── */
+.section {
+  @apply py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto;
+}
+
+/* ─── Gradient text utility ─── */
+.gradient-text {
+  @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+}
+
+/* ─── CV print styles — only active when user triggers window.print() ─── */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .cv-page-wrapper {
+    box-shadow: none !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+}
